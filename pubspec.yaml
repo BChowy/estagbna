@@ -53,6 +53,28 @@ dev_dependencies:
 
 # The following section is specific to Flutter.
 flutter:
+  fonts:
+    - family: Cairo
+      fonts:
+        - asset: fonts/Cairo-Black.ttf
+        - asset: fonts/Cairo-Bold.ttf
+          weight: 700
+        - asset: fonts/Cairo-ExtraLight.ttf
+          weight: 200
+        - asset: fonts/Cairo-Light.ttf
+          weight: 300
+        - asset: fonts/Cairo-Regular.ttf
+        - asset: fonts/Cairo-SemiBold.ttf
+          weight: 600
+    - family: Janna
+      fonts:
+        - asset: fonts/Janna LT Regular.ttf
+        - asset: fonts/Janna LT Bold.ttf
+          weight: 700
+    - family: Uthman
+      fonts:
+        - asset: fonts/UthmanTN1_Ver07.otf
+        - asset: fonts/UthmanTN1B Ver07.otf
 
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
