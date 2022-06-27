@@ -21,8 +21,10 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'فاستجبنا له',
       //App theme
+
       theme: AppTheme.darkTheme,
-      home: const Home(),
+      home:
+          const Directionality(textDirection: TextDirection.rtl, child: Home()),
     );
   }
 }
