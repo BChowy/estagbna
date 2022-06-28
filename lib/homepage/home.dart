@@ -18,24 +18,27 @@ class _HomeState extends State<Home> {
     //Instanctiate object
     SizeConfig().init(context);
     return Scaffold(
-        extendBodyBehindAppBar: true,
-        appBar: AppBar(
-          leading: IconButton(
+      extendBodyBehindAppBar: true,
+      appBar: AppBar(
+        actions: [
+          IconButton(
             icon: const Icon(Icons.settings),
+            iconSize: 28,
             onPressed: () {},
           ),
-          elevation: 0,
-        ),
-        body: Center(
+        ],
+        elevation: 0,
+      ),
+      body: Center(
           child: SizedBox(
-              width: SizeConfig.blockSizeHorizontal * 90,
-              height: SizeConfig.blockSizeVertical * 90,
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.stretch,
-                children: const [
-                  Heading(),
-                  FavoriteBtn(),
-                  Dua(),
+        width: SizeConfig.blockSizeHorizontal * 90,
+        height: SizeConfig.blockSizeVertical * 90,
+        child: Flex(
+          direction: Axis.vertical,
+          children: const [
+            Heading(),
+            FavoriteBtn(),
+            Dua(),
                 ],
               )),
         ));
