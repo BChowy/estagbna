@@ -55,6 +55,7 @@ dev_dependencies:
 flutter:
   assets:
     - assets/duaData.json
+    - assets/athkarData.json
   fonts:
     - family: Cairo
       fonts:
