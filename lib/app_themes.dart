@@ -19,9 +19,9 @@ class AppTheme {
 
       textTheme: const TextTheme(
               headline1: TextStyle(
-                decoration: TextDecoration.lineThrough,
+                /* decoration: TextDecoration.lineThrough,
                 decorationColor: Color(0x99668386),
-                decorationThickness: 3,
+                decorationThickness: 3, */
                 fontFamily: 'Uthman',
                 fontSize: 48,
                 
