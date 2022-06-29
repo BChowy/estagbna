@@ -21,7 +21,7 @@ class _HomeState extends State<Home> {
       appBar: AppBar(
         actions: [
           IconButton(
-            icon: const Icon(Icons.settings),
+            icon: const Icon(Icons.info_outline_rounded),
             iconSize: 28,
             onPressed: () {},
           ),
