@@ -2,8 +2,7 @@ import 'package:flutter/material.dart';
 import '../size_config.dart';
 import 'favorite_btn.dart';
 import 'heading.dart';
-import './dua.dart';
-import './athkar.dart';
+import 'lists.dart';
 
 class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
@@ -39,7 +38,6 @@ class _HomeState extends State<Home> {
             Heading(),
             FavoriteBtn(),
             Dua(),
-            Athkar(),
           ],
         ),
       )),
