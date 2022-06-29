@@ -1,4 +1,5 @@
 import 'package:flutter/widgets.dart';
+import 'package:flutter/material.dart';
 
 class SizeConfig {
   static late MediaQueryData _mediaQueryData;
@@ -25,5 +26,14 @@ class SizeConfig {
         _mediaQueryData.padding.top + _mediaQueryData.padding.bottom;
     safeBlockHorizontal = (screenWidth - _safeAreaHorizontal) / 100;
     safeBlockVertical = (screenHeight - _safeAreaVertical) / 100;
+  }
+
+  Size textSize(String text, TextStyle? style, BuildContext context) {
+    final TextPainter textPainter = TextPainter(
+        textScaleFactor: MediaQuery.of(context).textScaleFactor,
+        text: TextSpan(text: text, style: style),
+        textDirection: TextDirection.rtl)
+      ..layout();
+    return textPainter.size;
   }
 }
