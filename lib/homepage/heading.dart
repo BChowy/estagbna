@@ -20,8 +20,8 @@ class _HeadingState extends State<Heading> {
         ),
         SizedBox(
           width: SizeConfig()
-              .textSize(
-                  'فاستجبنا له', Theme.of(context).textTheme.headline1, context)
+              .textSize('فاستجبنا له', Theme.of(context).textTheme.headline1,
+                  context)
               .width,
           child: Stack(
             alignment: Alignment.center,
@@ -29,8 +29,6 @@ class _HeadingState extends State<Heading> {
               Positioned(
                   child: Divider(
                 thickness: 10,
-                /*  indent: SizeConfig.blockSizeHorizontal * 20,
-                endIndent: SizeConfig.blockSizeHorizontal * 20, */
                 color: Theme.of(context).cardColor,
               )),
               Text('فاسْتَجَبْنَا لَهُ',

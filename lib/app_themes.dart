@@ -10,18 +10,18 @@ class AppTheme {
       appBarTheme: const AppBarTheme(backgroundColor: Colors.transparent),
       primaryColor: primeColor,
       cardColor: secondColor,
+      primaryColorDark: btnColor,
+
       elevatedButtonTheme: ElevatedButtonThemeData(
-          style: ElevatedButton.styleFrom(
+          style: ElevatedButton.styleFrom(onPrimary: primeColor,
         primary: btnColor,
         elevation: 10,
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5.0)),
+        
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15.0)),
       )),
 
       textTheme: const TextTheme(
               headline1: TextStyle(
-                /* decoration: TextDecoration.lineThrough,
-                decorationColor: Color(0x99668386),
-                decorationThickness: 3, */
                 fontFamily: 'Uthman',
                 fontSize: 48,
                 
@@ -34,9 +34,10 @@ class AppTheme {
               bodyText1: TextStyle(
                   fontFamily: 'Janna',
                   fontSize:
-                      16), //bodyText2: TextStyle(fontFamily: , fontSize: , fontWeight: FontWeight.bold),
+                      16), 
+              //bodyText2: TextStyle(fontFamily: , fontSize: , fontWeight: FontWeight.bold),
               button: TextStyle(fontFamily: 'Cairo', fontSize: 15),
-              caption: TextStyle(
+              caption: TextStyle(color: primeColor,
                   fontFamily: 'Cairo',
                   fontSize: 12,
                   fontWeight: FontWeight.w500))
