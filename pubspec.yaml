@@ -67,6 +67,7 @@ flutter:
     - assets/images/motif-6.png
     - assets/images/motif-7.png
     - assets/images/motif-8.png
+    - assets/images/motif-8-flip.png
 
 
   fonts:

@@ -28,19 +28,31 @@ class _HomeState extends State<Home> {
         ],
         elevation: 0,
       ),
-      body: Center(
-          child: SizedBox(
-        width: SizeConfig.blockSizeHorizontal * 90,
-        height: SizeConfig.blockSizeVertical * 90,
-        child: Flex(
-          direction: Axis.vertical,
-          children: const [
-            Heading(),
-            FavoriteBtn(),
-            Dua(),
-          ],
-        ),
-      )),
+      body: Stack(
+        children: [
+          Opacity(
+            opacity: 0.1,
+            child: Align(
+              alignment: Alignment.topRight,
+              child: Image.asset('assets/images/motif-8-flip.png'),
+            ),
+          ),
+          Center(
+            child: SizedBox(
+              width: SizeConfig.blockSizeHorizontal * 90,
+              height: SizeConfig.blockSizeVertical * 90,
+              child: Flex(
+                direction: Axis.vertical,
+                children: const [
+                  Heading(),
+                  FavoriteBtn(),
+                  ContentList(),
+                ],
+              ),
+            ),
+          ),
+        ],
+      ),
     );
   }
 }
