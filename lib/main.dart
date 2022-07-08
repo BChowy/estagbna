@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 
 import 'homepage/home.dart';
 import './app_themes.dart';
@@ -19,12 +20,20 @@ class MyApp extends StatelessWidget {
 
     return MaterialApp(
       debugShowCheckedModeBanner: false,
+      localizationsDelegates: const [
+        GlobalMaterialLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+        GlobalCupertinoLocalizations.delegate,
+      ],
+      supportedLocales: const [
+        Locale('ar', ''), // Arabic, no country code
+      ],
+      locale: const Locale("ar", ''),
       title: 'فاستجبنا له',
       //App theme
 
       theme: AppTheme.darkTheme,
-      home:
-          const Directionality(textDirection: TextDirection.rtl, child: Home()),
+      home: const Home(),
     );
   }
 }
