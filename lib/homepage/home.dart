@@ -1,5 +1,7 @@
+import 'package:estagabna/homepage/dialog.dart';
+import 'package:estagabna/main.dart';
 import 'package:flutter/material.dart';
-import '../size_config.dart';
+import '../else/size_config.dart';
 import 'favorite_btn.dart';
 import 'heading.dart';
 import 'lists.dart';
@@ -21,6 +23,18 @@ class _HomeState extends State<Home> {
       appBar: AppBar(
         actions: [
           IconButton(
+            icon: Icon(MyApp.of(context).dark
+                ? Icons.light_mode_outlined
+                : Icons.dark_mode_outlined),
+            iconSize: 28,
+            onPressed: () {
+              setState(() {
+                MyApp.of(context).changeTheme(!MyApp.of(context).dark);
+                MyApp.of(context).saveTheme();
+              });
+            },
+          ),
+          IconButton(
             icon: const Icon(Icons.info_outline_rounded),
             iconSize: 28,
             onPressed: () {
@@ -38,7 +52,10 @@ class _HomeState extends State<Home> {
             opacity: 0.1,
             child: Align(
               alignment: Alignment.topRight,
-              child: Image.asset('assets/images/motif-8-flip.png'),
+              child: Image.asset(
+                'assets/images/motif-2.png',
+                color: MyApp.of(context).dark ? null : Colors.black,
+              ),
             ),
           ),
           Center(
