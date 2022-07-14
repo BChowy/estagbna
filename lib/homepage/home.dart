@@ -23,7 +23,11 @@ class _HomeState extends State<Home> {
           IconButton(
             icon: const Icon(Icons.info_outline_rounded),
             iconSize: 28,
-            onPressed: () {},
+            onPressed: () {
+              showDialog(
+                  context: context,
+                  builder: (context) => const ShowDialogBox());
+            },
           ),
         ],
         elevation: 0,
