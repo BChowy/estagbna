@@ -32,7 +32,7 @@ class SizeConfig {
     final TextPainter textPainter = TextPainter(
         textScaleFactor: MediaQuery.of(context).textScaleFactor,
         text: TextSpan(text: text, style: style),
-        textDirection: TextDirection.rtl)
+        textDirection: TextDirection.rtl, maxLines: 10)
       ..layout();
     return textPainter.size;
   }
