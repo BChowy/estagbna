@@ -55,97 +55,13 @@ class _DuaState extends State<Dua> {
                             style: Theme.of(context).textTheme.headline6,
                           ),
                           InkWell(
+                            onTap: () {
+                              Navigator.of(context).push(
+                                CustomPageRoute(
                                     child: CategoryPage(
                                   fileName: duaFilePath,
                                   names: list,
                                 )),
-                            child: Row(children: [
-                              Text('إظهار الكل',
-                                  style: Theme.of(context).textTheme.caption),
-                              const Padding(
-                                padding: EdgeInsets.only(top: 2),
-                                child: Icon(
-                                  Icons.keyboard_arrow_left_sharp,
-                                  size: 20,
-                                ),
-                              ),
-                            ]),
-                          ),
-                        ],
-                      )),
-                    ),
-                    Container(
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(10),
-                          color: Theme.of(context).primaryColor,
-                          image: DecorationImage(
-                              colorFilter: const ColorFilter.mode(
-                                  Colors.black26, BlendMode.dstIn),
-                              image: AssetImage(listBGimagePath),
-                              fit: BoxFit.cover)),
-                      height: SizeConfig.blockSizeVertical * 20,
-                      // width: double.infinity,
-
-                      child: GridView.count(
-                          crossAxisCount: 1,
-                          padding: const EdgeInsets.symmetric(
-                              vertical: 8.0, horizontal: 10.0),
-                          scrollDirection: Axis.horizontal,
-                          childAspectRatio: 1,
-                          physics: const AlwaysScrollableScrollPhysics(),
-                          shrinkWrap: true,
-                          children: List.generate(
-                            list.length,
-                            (index) {
-                              return Card(
-                                  shape: RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.circular(16)),
-                                  //clipBehavior: Clip.antiAlias,
-                                  color: Theme.of(context).cardColor,
-                                  child: TextButton(
-                                    onPressed: () {},
-                                    child: Center(
-                                        child: Text(
-                                      list[index],
-                                      style:
-                                          Theme.of(context).textTheme.bodyText1,
-                                    )),
-                                  ));
-                            },
-                          )),
-                    ),
-                  ],
-                );
-              }),
-          FutureBuilder<DataModel>(
-              future: InfoAPI(athkarFilePath).getDataLocally(context),
-              builder: (context, snapshot) {
-                final data = snapshot.data;
-                final List<String> list = getData(data);
-
-                return Column(
-                  children: [
-                    Padding(
-                      padding: EdgeInsets.symmetric(
-                          vertical: SizeConfig.blockSizeVertical * 2),
-                      child: (Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Text(
-                            'الأذكار',
-                            style: Theme.of(context).textTheme.headline6,
-                          ),
-                          InkWell(
-                            onTap: () {
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => Directionality(
-                                        textDirection: TextDirection.rtl,
-                                        child: CategoryPage(
-                                          fileName: athkarFilePath,
-                                          names: list,
-                                        ))),
                               );
                             },
                             child: Row(children: [
@@ -187,15 +103,112 @@ class _DuaState extends State<Dua> {
                             list.length,
                             (index) {
                               return Card(
-                                  shape: RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.circular(16)),
-                                  //clipBehavior: Clip.antiAlias,
-                                  color: Theme.of(context).cardColor,
-                                  child: TextButton(
-                                    onPressed: () {},
+                                  color: Colors.transparent,
+                                  elevation: 0,
+                                  child: ElevatedButton(
+                                    onPressed: () {
+                                      Navigator.of(context)
+                                          .push(CustomPageRoute(
+                                              child: Contents(
+                                        fileName: duaFilePath,
+                                        names: list[index],
+                                      ), direction: AxisDirection.up));
+                                    },
                                     child: Center(
                                         child: Text(
                                       list[index],
+                                      textAlign: TextAlign.center,
+                                      style:
+                                          Theme.of(context).textTheme.bodyText1,
+                                    )),
+                                  ));
+                            },
+                          )),
+                    ),
+                  ],
+                );
+              }),
+          FutureBuilder<DataModel>(
+              future: InfoAPI(athkarFilePath).getDataLocally(context),
+              builder: (context, snapshot) {
+                final data = snapshot.data;
+                final List<String> list = getData(data);
+
+                return Column(
+                  children: [
+                    Padding(
+                      padding: EdgeInsets.symmetric(
+                          vertical: SizeConfig.blockSizeVertical * 2),
+                      child: (Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text(
+                            'الأذكار',
+                            style: Theme.of(context).textTheme.headline6,
+                          ),
+                          InkWell(
+                            onTap: () => {
+                              Navigator.of(context).push(CustomPageRoute(
+                                  child: CategoryPage(
+                                fileName: athkarFilePath,
+                                names: list,
+                              ))),
+                            },
+                            child: Row(children: [
+                              Text('إظهار الكل',
+                                  style: Theme.of(context).textTheme.caption),
+                              const Padding(
+                                padding: EdgeInsets.only(top: 2),
+                                child: Icon(
+                                  Icons.keyboard_arrow_left_sharp,
+                                  size: 20,
+                                ),
+                              ),
+                            ]),
+                          ),
+                        ],
+                      )),
+                    ),
+                    Container(
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(10),
+                          color: Theme.of(context).primaryColor,
+                          image: DecorationImage(
+                              colorFilter: const ColorFilter.mode(
+                                  Colors.black26, BlendMode.dstIn),
+                              image: AssetImage(listBGimagePath),
+                              fit: BoxFit.cover)),
+                      height: SizeConfig.blockSizeVertical * 20,
+                      // width: double.infinity,
+
+                      child: GridView.count(
+                          crossAxisCount: 1,
+                          padding: const EdgeInsets.symmetric(
+                              vertical: 8.0, horizontal: 10.0),
+                          scrollDirection: Axis.horizontal,
+                          childAspectRatio: 1,
+                          physics: const AlwaysScrollableScrollPhysics(),
+                          shrinkWrap: true,
+                          children: List.generate(
+                            list.length,
+                            (index) {
+                              return Card(
+                                  elevation: 0,
+                                  color: Colors.transparent,
+                                  child: ElevatedButton(
+                                    onPressed: () {
+                                      Navigator.of(context)
+                                          .push(CustomPageRoute(
+                                              child: Contents(
+                                                fileName: athkarFilePath,
+                                                names: list[index],
+                                              ),
+                                              direction: AxisDirection.up));
+                                    },
+                                    child: Center(
+                                        child: Text(
+                                      list[index],
+                                      textAlign: TextAlign.center,
                                       style:
                                           Theme.of(context).textTheme.bodyText1,
                                     )),

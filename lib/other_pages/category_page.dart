@@ -75,6 +75,13 @@ class _CategoryPageState extends State<CategoryPage> {
                   itemCount: names.length,
                   itemBuilder: (context, index) {
                     return Card(
+                            elevation: 0,
+                            color: Colors.transparent,
+                            child: ElevatedButton(
+                              style: ElevatedButton.styleFrom(
+                                  primary: Theme.of(context).primaryColor),
+                              onPressed: () {
+                                Navigator.of(context).push(CustomPageRoute(
                                     child: Contents(
                                       fileName: fileName,
                                       names: names[index],
