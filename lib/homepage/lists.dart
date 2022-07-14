@@ -1,29 +1,28 @@
+import 'package:estagabna/else/routeAnimation.dart';
 import 'package:flutter/material.dart';
-import '../size_config.dart';
-import '../data_model.dart';
-import '../info_API.dart';
+import '../else/size_config.dart';
+import '../model/data_model.dart';
+import '../model/info_API.dart';
 import '../other_pages/category_page.dart';
+import '../other_pages/contents.dart';
 
-class Dua extends StatefulWidget {
-  const Dua({Key? key}) : super(key: key);
+class ContentList extends StatefulWidget {
+  const ContentList({Key? key}) : super(key: key);
 
   @override
-  _DuaState createState() => _DuaState();
+  _ContentListState createState() => _ContentListState();
 }
 
-class _DuaState extends State<Dua> {
+class _ContentListState extends State<ContentList> {
   final duaFilePath = 'assets/duaData.json';
   final athkarFilePath = 'assets/athkarData.json';
-  final listBGimagePath = 'assets/images/motif-1.png';
 
   List<String> getData(DataModel? data) {
     List<String> cateNameList = [];
-    //List<Object> cateIdList = [];
     int length = data?.category.length ?? 0;
     for (var i = 0; i < length; i++) {
       final detail = data?.category.elementAt(i);
       cateNameList.add(detail?.name ?? '');
-      //cateIdList.add(detail?.cateid ?? '');
       //print(detail?.cateid);
     }
     return cateNameList;
@@ -67,11 +66,12 @@ class _DuaState extends State<Dua> {
                             child: Row(children: [
                               Text('إظهار الكل',
                                   style: Theme.of(context).textTheme.caption),
-                              const Padding(
-                                padding: EdgeInsets.only(top: 2),
+                              Padding(
+                                padding: const EdgeInsets.only(top: 2),
                                 child: Icon(
                                   Icons.keyboard_arrow_left_sharp,
                                   size: 20,
+                                  color: Theme.of(context).primaryColor,
                                 ),
                               ),
                             ]),
@@ -79,15 +79,7 @@ class _DuaState extends State<Dua> {
                         ],
                       )),
                     ),
-                    Container(
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(10),
-                          color: Theme.of(context).primaryColor,
-                          image: DecorationImage(
-                              colorFilter: const ColorFilter.mode(
-                                  Colors.black26, BlendMode.dstIn),
-                              image: AssetImage(listBGimagePath),
-                              fit: BoxFit.cover)),
+                    SizedBox(
                       height: SizeConfig.blockSizeVertical * 20,
                       // width: double.infinity,
 
@@ -157,11 +149,12 @@ class _DuaState extends State<Dua> {
                             child: Row(children: [
                               Text('إظهار الكل',
                                   style: Theme.of(context).textTheme.caption),
-                              const Padding(
-                                padding: EdgeInsets.only(top: 2),
+                              Padding(
+                                padding: const EdgeInsets.only(top: 2),
                                 child: Icon(
                                   Icons.keyboard_arrow_left_sharp,
                                   size: 20,
+                                  color: Theme.of(context).primaryColor,
                                 ),
                               ),
                             ]),
@@ -169,15 +162,7 @@ class _DuaState extends State<Dua> {
                         ],
                       )),
                     ),
-                    Container(
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(10),
-                          color: Theme.of(context).primaryColor,
-                          image: DecorationImage(
-                              colorFilter: const ColorFilter.mode(
-                                  Colors.black26, BlendMode.dstIn),
-                              image: AssetImage(listBGimagePath),
-                              fit: BoxFit.cover)),
+                    SizedBox(
                       height: SizeConfig.blockSizeVertical * 20,
                       // width: double.infinity,
 
