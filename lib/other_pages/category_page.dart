@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
-import '../size_config.dart';
+import '../else/routeAnimation.dart';
+import '../else/size_config.dart';
+import '../main.dart';
+import 'contents.dart';
 
 class CategoryPage extends StatefulWidget {
   const CategoryPage({
@@ -30,6 +33,15 @@ class _CategoryPageState extends State<CategoryPage> {
     return Scaffold(
       extendBodyBehindAppBar: true,
       appBar: AppBar(
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.keyboard_arrow_left_sharp),
+            iconSize: 28,
+            onPressed: () {
+              Navigator.pop(context);
+            },
+          )
+        ],
         automaticallyImplyLeading: false,
         elevation: 0,
       ),
@@ -37,44 +49,47 @@ class _CategoryPageState extends State<CategoryPage> {
           child: SizedBox(
         width: SizeConfig.blockSizeHorizontal * 90,
         height: SizeConfig.blockSizeVertical * 90,
-        child: Column(
-          children: [
-            SizedBox(
-              width: SizeConfig()
-                  .textSize(
-                      fileName == 'assets/duaData.json' ? 'الأدعية' : 'الأذكار',
-                      Theme.of(context).textTheme.headline1,
-                      context)
-                  .width,
-              child: Stack(
-                alignment: Alignment.centerRight,
-                children: [
-                  Positioned(
-                      child: Divider(
-                    thickness: 10,
-                    /* indent: SizeConfig.blockSizeHorizontal * 20,
-                    endIndent: SizeConfig.blockSizeHorizontal * 50, */
-                    color: Theme.of(context).cardColor,
-                  )),
-                  Text(
-                      fileName == 'assets/duaData.json' ? 'الأدعية' : 'الأذكار',
-                      overflow: TextOverflow.ellipsis, //what?
-                      style: Theme.of(context).textTheme.headline1),
-                ],
-              ),
-            ),
-            SizedBox(
-              height: SizeConfig.blockSizeVertical * 70,
-              child: GridView.builder(
-                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                    crossAxisCount: 3,
-                    childAspectRatio: 1,
-                    crossAxisSpacing: SizeConfig.blockSizeHorizontal * 5,
-                    mainAxisSpacing: SizeConfig.blockSizeVertical * 2,
+          width: double.infinity,
+          child: SingleChildScrollView(
+            child: Column(
+              children: [
+                SizedBox(
+                  width: SizeConfig()
+                      .textSize(
+                          fileName == 'assets/duaData.json'
+                              ? 'الأدعية'
+                              : 'الأذكار',
+                          Theme.of(context).textTheme.headline1,
+                          context)
+                      .width,
+                  child: Stack(
+                    alignment: Alignment.centerRight,
+                    children: [
+                      Positioned(
+                          child: Divider(
+                        thickness: 10,
+                        color: Theme.of(context).primaryColor,
+                      )),
+                      Text(
+                          fileName == 'assets/duaData.json'
+                              ? 'الأدعية'
+                              : 'الأذكار',
+                          style: Theme.of(context).textTheme.headline1),
+                    ],
                   ),
-                  itemCount: names.length,
-                  itemBuilder: (context, index) {
-                    return Card(
+                ),
+                SizedBox(
+                  height: SizeConfig.blockSizeVertical * 70,
+                  child: GridView.builder(
+                      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                        crossAxisCount: 3,
+                        childAspectRatio: 1,
+                        crossAxisSpacing: SizeConfig.blockSizeHorizontal * 1,
+                        mainAxisSpacing: SizeConfig.blockSizeVertical * 3,
+                      ),
+                      itemCount: names.length,
+                      itemBuilder: (context, index) {
+                        return Card(
                             elevation: 0,
                             color: Colors.transparent,
                             child: ElevatedButton(
@@ -86,12 +101,20 @@ class _CategoryPageState extends State<CategoryPage> {
                                       fileName: fileName,
                                       names: names[index],
                                     ),
-                            style: Theme.of(context).textTheme.bodyText1,
-                          )),
-                        ));
-                  }),
+                                    direction: AxisDirection.up));
+                              },
+                              child: Center(
+                                  child: Text(
+                                names[index],
+                                textAlign: TextAlign.center,
+                                style: Theme.of(context).textTheme.bodyText1,
+                              )),
+                            ));
+                      }),
+                ),
+              ],
             ),
-          ],
+          ),
         ),
       )),
     );

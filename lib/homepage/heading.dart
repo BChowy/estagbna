@@ -1,4 +1,4 @@
-import '../size_config.dart';
+import '../else/size_config.dart';
 import 'package:flutter/material.dart';
 
 class Heading extends StatefulWidget {
@@ -20,8 +20,8 @@ class _HeadingState extends State<Heading> {
         ),
         SizedBox(
           width: SizeConfig()
-              .textSize('فاستجبنا له', Theme.of(context).textTheme.headline1,
-                  context)
+              .textSize(
+                  'فاستجبنا له', Theme.of(context).textTheme.headline1, context)
               .width,
           child: Stack(
             alignment: Alignment.center,
@@ -29,7 +29,7 @@ class _HeadingState extends State<Heading> {
               Positioned(
                   child: Divider(
                 thickness: 10,
-                color: Theme.of(context).cardColor,
+                color: Theme.of(context).primaryColor,
               )),
               Text('فاسْتَجَبْنَا لَهُ',
                   style: Theme.of(context).textTheme.headline1),
