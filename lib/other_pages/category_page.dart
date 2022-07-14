@@ -49,6 +49,14 @@ class _CategoryPageState extends State<CategoryPage> {
           child: SizedBox(
         width: SizeConfig.blockSizeHorizontal * 90,
         height: SizeConfig.blockSizeVertical * 90,
+        child: Container(
+          decoration: BoxDecoration(
+              image: DecorationImage(
+                  opacity: 200,
+                  alignment: Alignment.center,
+                  image: AssetImage(MyApp.of(context).dark
+                      ? 'assets/images/motif-1.png'
+                      : 'assets/images/motif-1-light.png'))),
           width: double.infinity,
           child: SingleChildScrollView(
             child: Column(
