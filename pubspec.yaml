@@ -64,14 +64,13 @@ flutter:
   
   #IMAGES
     - assets/images/motif-1.png
+    - assets/images/motif-1-light.png
     - assets/images/motif-2.png
-    - assets/images/motif-3.png
-    - assets/images/motif-4.png
-    - assets/images/motif-5.png
-    - assets/images/motif-6.png
-    - assets/images/motif-7.png
-    - assets/images/motif-8.png
-    - assets/images/motif-8-flip.png
+
+
+  #LOGO IMAGES
+    - assets/images/twitter-logo.png
+    - assets/images/gmail-logo.png
 
 
   fonts:
