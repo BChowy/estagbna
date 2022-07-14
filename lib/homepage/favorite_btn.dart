@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../size_config.dart';
+import '../else/size_config.dart';
 
 class FavoriteBtn extends StatelessWidget {
   const FavoriteBtn({Key? key}) : super(key: key);
@@ -10,6 +10,8 @@ class FavoriteBtn extends StatelessWidget {
       //width: double.infinity,
       height: SizeConfig.blockSizeVertical * 6,
       child: ElevatedButton(
+          style:
+              ElevatedButton.styleFrom(primary: Theme.of(context).primaryColor),
           onPressed: () {},
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
