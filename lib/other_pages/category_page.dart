@@ -75,15 +75,10 @@ class _CategoryPageState extends State<CategoryPage> {
                   itemCount: names.length,
                   itemBuilder: (context, index) {
                     return Card(
-                        shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(16)),
-                        //clipBehavior: Clip.antiAlias,
-                        color: Theme.of(context).cardColor,
-                        child: TextButton(
-                          onPressed: () {},
-                          child: Center(
-                              child: Text(
-                            names[index],
+                                    child: Contents(
+                                      fileName: fileName,
+                                      names: names[index],
+                                    ),
                             style: Theme.of(context).textTheme.bodyText1,
                           )),
                         ));

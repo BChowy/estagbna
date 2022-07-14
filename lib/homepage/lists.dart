@@ -55,7 +55,10 @@ class _DuaState extends State<Dua> {
                             style: Theme.of(context).textTheme.headline6,
                           ),
                           InkWell(
-                            onTap: () {},
+                                    child: CategoryPage(
+                                  fileName: duaFilePath,
+                                  names: list,
+                                )),
                             child: Row(children: [
                               Text('إظهار الكل',
                                   style: Theme.of(context).textTheme.caption),
