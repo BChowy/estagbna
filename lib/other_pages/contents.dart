@@ -131,7 +131,9 @@ class _ContentsState extends State<Contents> {
                                             child: IconButton(
                                               onPressed: () {},
                                               icon: const Icon(
-                                                  Icons.favorite_rounded),
+                                                Icons.favorite_rounded,
+                                                color: Colors.white,
+                                              ),
                                               iconSize: 20,
                                             ),
                                           ),

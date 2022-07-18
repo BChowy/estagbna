@@ -40,7 +40,6 @@ class _MyAppState extends State<MyApp> {
   _getTheme() async {
     _darkF = _prefs.then((SharedPreferences prefs) {
       return prefs.getBool('theme') ?? true;
-      
     });
     dark = await _darkF;
   }
@@ -56,21 +55,21 @@ class _MyAppState extends State<MyApp> {
     //only portrait orientation is allowed
     SystemChrome.setPreferredOrientations(
         [DeviceOrientation.portraitUp, DeviceOrientation.portraitDown]);
-      return MaterialApp(
-        debugShowCheckedModeBanner: false,
-        localizationsDelegates: const [
-          GlobalMaterialLocalizations.delegate,
-          GlobalWidgetsLocalizations.delegate,
-          GlobalCupertinoLocalizations.delegate,
-        ],
-        supportedLocales: const [
-          Locale('ar', ''), // Arabic, no country code
-        ],
-        locale: const Locale("ar", ''),
-        title: 'فاستجبنا له',
-        theme: dark ? AppTheme.darkTheme : AppTheme.lightTheme,
-        //darkTheme: AppTheme.darkTheme,
-        home: const Home(),
-      );
-    }
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      localizationsDelegates: const [
+        GlobalMaterialLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+        GlobalCupertinoLocalizations.delegate,
+      ],
+      supportedLocales: const [
+        Locale('ar', ''), // Arabic, no country code
+      ],
+      locale: const Locale("ar", ''),
+      title: 'فاستجبنا له',
+      theme: dark ? AppTheme.darkTheme : AppTheme.lightTheme,
+      //darkTheme: AppTheme.darkTheme,
+      home: const Home(),
+    );
   }
+}

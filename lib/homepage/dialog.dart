@@ -34,7 +34,6 @@ class _ShowDialogBoxState extends State<ShowDialogBox> {
       scrollable: true,
       alignment: Alignment.center,
       title: const Text('عن التطبيق'),
-
       content: SizedBox(
         width: SizeConfig.safeBlockHorizontal * 50,
         child: Column(

@@ -74,23 +74,30 @@ class AppTheme {
       )),
 
       textTheme: TextTheme(
-          headline1: const TextStyle(
-            fontFamily: 'Uthman',
-            fontSize: 48,
-          ).apply(color: darkColor),
-          headline5: const TextStyle(fontFamily: 'Uthman', fontSize: 18),
-          headline6: const TextStyle(
-              fontFamily: 'Cairo', fontSize: 16, fontWeight: FontWeight.bold),
-          bodyText1: const TextStyle(
-              fontFamily: 'Janna', fontSize: 16, fontWeight: FontWeight.normal),
-          bodyText2: const TextStyle(
-              fontFamily: 'Cairo', fontSize: 16, fontWeight: FontWeight.normal),
-          button: const TextStyle(fontFamily: 'Cairo', fontSize: 15),
-          caption: const TextStyle(
-              color: primeColor,
-              fontFamily: 'Cairo',
-              fontSize: 12,
-              fontWeight: FontWeight.w700)), //set font color to white globally
+              headline1: const TextStyle(
+                fontFamily: 'Uthman',
+                fontSize: 48,
+              ).apply(color: darkColor),
+              headline5: const TextStyle(fontFamily: 'Uthman', fontSize: 18),
+              headline6: const TextStyle(
+                  fontFamily: 'Cairo',
+                  fontSize: 16,
+                  fontWeight: FontWeight.bold),
+              bodyText1: const TextStyle(
+                  fontFamily: 'Janna',
+                  fontSize: 16,
+                  fontWeight: FontWeight.normal),
+              bodyText2: const TextStyle(
+                  fontFamily: 'Cairo',
+                  fontSize: 16,
+                  fontWeight: FontWeight.normal),
+              button: const TextStyle(fontFamily: 'Cairo', fontSize: 15),
+              caption: const TextStyle(
+                  color: primeColor,
+                  fontFamily: 'Cairo',
+                  fontSize: 12,
+                  fontWeight: FontWeight.w700))
+          .apply(bodyColor: darkColor), //set font color to white globally
     );
   }
 }

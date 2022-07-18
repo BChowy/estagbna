@@ -102,9 +102,10 @@ class _ContentListState extends State<ContentList> {
                                       Navigator.of(context)
                                           .push(CustomPageRoute(
                                               child: Contents(
-                                        fileName: duaFilePath,
-                                        names: list[index],
-                                      ), direction: AxisDirection.up));
+                                                fileName: duaFilePath,
+                                                names: list[index],
+                                              ),
+                                              direction: AxisDirection.up));
                                     },
                                     child: Center(
                                         child: Text(
