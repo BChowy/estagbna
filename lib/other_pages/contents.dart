@@ -126,7 +126,7 @@ class _ContentsState extends State<Contents> {
                                               BorderRadius.circular(15.0)),
                                       child: Column(
                                         children: [
-                                          Align(
+                                          /* Align(
                                             alignment: Alignment.topLeft,
                                             child: IconButton(
                                               onPressed: () {},
@@ -136,13 +136,11 @@ class _ContentsState extends State<Contents> {
                                               ),
                                               iconSize: 20,
                                             ),
-                                          ),
+                                          ), */
                                           SizedBox(
                                             child: Padding(
-                                              padding: const EdgeInsets.only(
-                                                  left: 15.0,
-                                                  right: 15.0,
-                                                  bottom: 15.0),
+                                              padding:
+                                                  const EdgeInsets.all(15.0),
                                               child: Text(
                                                 list[index],
                                                 textAlign: TextAlign.justify,

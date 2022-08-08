@@ -66,7 +66,7 @@ class _HomeState extends State<Home> {
                 direction: Axis.vertical,
                 children: const [
                   Heading(),
-                  FavoriteBtn(),
+                 // FavoriteBtn(),
                   ContentList(),
                 ],
               ),
