@@ -27,23 +27,19 @@ class DataModel {
 
 class Category {
   Category({
-    required this.cateid,
     required this.name,
     required this.info,
   });
 
-  int cateid;
   String name;
   List<Info> info;
 
   factory Category.fromJson(Map<String, dynamic> json) => Category(
-        cateid: json["cateid"],
         name: json["name"],
         info: List<Info>.from(json["info"].map((x) => Info.fromJson(x))),
       );
 
   Map<String, dynamic> toJson() => {
-        "cateid": cateid,
         "name": name,
         "info": List<dynamic>.from(info.map((x) => x.toJson())),
       };
